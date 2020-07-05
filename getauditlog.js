@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
     if(!args[0]) {
         return message.channel.send("Please provide an action type!");
     }
-    let groupId = process.env.groupId;
+    let groupId = Number(process.env.groupId);
     let validActions = ['DeletePost', 'RemoveMember', 'AcceptJoinRequest', 'DeclineJoinRequest', 'PostStatus', 'ChangeRank', 'BuyAd', 'SendAllyRequest', 'CreateEnemy', 'AcceptAllyRequest', 'DeclineAllyRequest', 'DeleteAlly', 'DeleteEnemy', 'AddGroupPlace', 'RemoveGroupPlace', 'CreateItems', 'ConfigureItems', 'SpendGroupFunds', 'ChangeOwner', 'Delete', 'AdjustCurrenceyAmounts', 'Abandon', 'Claim', 'Rename', 'ChangeDescription', 'InviteToClan', 'KickFromClan', 'CancelClanInvite', 'BuyClan', 'CreateGroupAsset', 'UpdateGroupAsset', 'ConfigureGroupAsset', 'RevertGroupAsset', 'CreateGroupDevelperProduct', 'ConfigureGroupGame', 'Lock', 'Unlock', 'CreateGamePass', 'CreateBadge', 'ConfigureBadge', 'SavePlace', 'PublishPlace'];
     let actionType = args.join(" ");
     let isValid = false;
